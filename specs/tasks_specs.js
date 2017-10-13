@@ -6,11 +6,19 @@ describe('Task', function(){
   var task;
 
   beforeEach(function () {
-    task = new Task(65, "red", "5000");
+    task = new Task(65, "red", 5000);
   })
 
   it("should return difficulty level", function () {
     assert.strictEqual(65, task.difficulty);
+  })
+
+  it("should return urgency of task", function (){
+    assert.strictEqual("red", task.urgency);
+  })
+
+  it("should return reward of task", function (){
+    assert.strictEqual(5000, task.reward);
   })
 
 })
