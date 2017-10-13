@@ -24,4 +24,8 @@ describe('Hero', function(){
   it("hero should say name when talking", function () {
     assert.strictEqual("Hi, my name is Derek", hero1.talk());
   })
+
+  it("check hero to do list starts empty", function () {
+    assert.strictEqual(0,hero1.toDoList.length)
+  })
 })
