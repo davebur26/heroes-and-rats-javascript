@@ -1,5 +1,5 @@
 var assert = require('assert')
-var Hero = require('../tasks.js')
+var Task = require('../tasks.js')
 
 
 describe('Task', function(){
