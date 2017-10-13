@@ -6,7 +6,7 @@ describe('Task', function(){
   var task;
 
   beforeEach(function () {
-    task = new Task(65, "red", 5000);
+    task = new Task(65, 1, 5000);
   })
 
   it("should return difficulty level", function () {
@@ -14,7 +14,7 @@ describe('Task', function(){
   })
 
   it("should return urgency of task", function (){
-    assert.strictEqual("red", task.urgency);
+    assert.strictEqual(1, task.urgency);
   })
 
   it("should return reward of task", function (){
