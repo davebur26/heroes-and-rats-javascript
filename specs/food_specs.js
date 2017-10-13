@@ -13,6 +13,10 @@ describe('Food', function(){
     assert.strictEqual("Cabbage", food.name)
   })
 
+  it("Should get food's calories", function(){
+    assert.strictEqual(15, food.calories)
+  })
+
 
 
 
