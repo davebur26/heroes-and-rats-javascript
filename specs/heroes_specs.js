@@ -22,6 +22,6 @@ describe('Hero', function(){
   })
 
   it("hero should say name when talking", function () {
-    assert.strictEqual("Hi, my name is Dale", hero1.talk());
+    assert.strictEqual("Hi, my name is Derek", hero1.talk());
   })
 })
