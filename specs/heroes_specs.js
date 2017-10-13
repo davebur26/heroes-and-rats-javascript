@@ -6,7 +6,7 @@ describe('Hero', function(){
   var hero1;
 
   beforeEach(function () {
-    hero1 = new Hero("Derek", "300", "chocolate");
+    hero1 = new Hero("Derek", 300, "chocolate");
   })
 
   it("should return name of hero", function () {
@@ -14,7 +14,7 @@ describe('Hero', function(){
   })
 
   it("should return health of hero", function () {
-    assert.strictEqual("300", hero1.health);
+    assert.strictEqual(300, hero1.health);
   })
 
   it("should return favourite food of hero", function () {
