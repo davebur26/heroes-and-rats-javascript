@@ -1,15 +1,22 @@
 var assert = require('assert')
 var Hero = require('../heroes.js')
 var Food = require('../food.js')
+var Task = require('../tasks.js')
 
 
 describe('Hero', function(){
   var hero1;
   var cabbage;
+  var task1;
+  var task2;
+  var task3;
 
   beforeEach(function () {
     hero1 = new Hero("Derek", 300, "chocolate");
     cabbage = new Food("chocolate", 20)
+    task1 = new Task(65, 3, 1234);
+    task2 = new Task(100, 2, 3241);
+    task3 = new Task(89, 1, 9999);
   })
 
   it("should return name of hero", function () {
@@ -36,4 +43,10 @@ describe('Hero', function(){
     hero1.eat(cabbage)
     assert.strictEqual(330, hero1.health)
   })
+
+  it("sort to do list for difficulty")
+    hero1.addTask(task1)
+    hero1.addTask(task2)
+    hero1.addTask(task3)
+    assert.strictEqual([task2, task3, task1], hero1.toDoList)
 })
