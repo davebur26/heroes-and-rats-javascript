@@ -1,5 +1,5 @@
 var assert = require('assert')
-var Hero = require('../hero.js')
+var Hero = require('../heroes.js')
 
 
 describe('Hero', function(){
@@ -10,18 +10,8 @@ describe('Hero', function(){
   })
 
   it("should return name of hero", function () {
-    assert.strictEquals("Derek", hero1.name);
+    assert.strictEqual("Derek", hero1.name);
   })
 
 
 })
-
-
-
-
-// A. Create a constructor to create a Hero character
-// A Hero has a name
-// A Hero has health
-// A Hero has a favourite food
-// A Hero can talk saying their name
-// A Hero has a collection of tasks to complete
