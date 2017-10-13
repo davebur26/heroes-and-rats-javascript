@@ -21,4 +21,9 @@ describe('Task', function(){
     assert.strictEqual(5000, task.reward);
   })
 
+  it("should change the status of the task", function (){
+    task.completed();
+    assert.strictEqual(true, task.completion)
+  })
+
 })
