@@ -9,7 +9,7 @@ describe('Hero', function(){
 
   beforeEach(function () {
     hero1 = new Hero("Derek", 300, "chocolate");
-    cabbage = new Food("Cabbage", 20)
+    cabbage = new Food("chocolate", 20)
   })
 
   it("should return name of hero", function () {
@@ -34,6 +34,6 @@ describe('Hero', function(){
 
   it("hero health should go up when eating food", function () {
     hero1.eat(cabbage)
-    assert.strictEqual(320, hero1.health)
+    assert.strictEqual(330, hero1.health)
   })
 })
