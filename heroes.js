@@ -17,7 +17,11 @@ Hero.prototype.talk = function () {
 }
 
 Hero.prototype.eat = function (food) {
-  this.health += food.calories
+  var multiplyer = 1
+  if (food.name === this.favFood) multiplyer = 1.5;
+  this.health += food.calories * multiplyer
+
+
 }
 
 module.exports = Hero;
