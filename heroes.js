@@ -20,8 +20,16 @@ Hero.prototype.eat = function (food) {
   var multiplyer = 1
   if (food.name === this.favFood) multiplyer = 1.5;
   this.health += food.calories * multiplyer
-
-
 }
 
+Hero.prototype.addTask = function (task) {
+  this.toDoList.push(task);
+};
+
+Hero.prototype.sortToDoList = function (taskElement, order) {
+  this.toDoList.sort(function(a,b){
+    return b[taskElement] - a[taskElement]
+  })
+
+};
 module.exports = Hero;
