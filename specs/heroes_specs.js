@@ -13,10 +13,12 @@ describe('Hero', function(){
 
   beforeEach(function () {
     hero1 = new Hero("Derek", 300, "chocolate");
-    cabbage = new Food("chocolate", 20)
+    chocolate = new Food("chocolate", 20)
+    cabbage = new Food("cabbage", 20)
     task1 = new Task(65, 3, 1234);
     task2 = new Task(100, 2, 3241);
     task3 = new Task(89, 1, 9999);
+    rat = new Rat()
   })
 
   it("should return name of hero", function () {
@@ -40,7 +42,7 @@ describe('Hero', function(){
   })
 
   it("hero health should go up when eating food", function () {
-    hero1.eat(cabbage)
+    hero1.eat(chocolate)
     assert.strictEqual(330, hero1.health)
   })
 
@@ -67,6 +69,14 @@ describe('Hero', function(){
     task2.completed()
     assert.deepStrictEqual([task2], hero1.tasksCompleted(true))
     assert.deepStrictEqual([task1, task3], hero1.tasksCompleted(false))
-    })
+  })
+
+  it("should reduce hero health when eating poisoned food", function (){
+    rat.touch(cabbage)
+    rat.touch(chocolate)
+    hero1.eat(chocolate)
+    hero1.eat(cabbage)
+    asser.strictEqual(250, hero1.health)
+  })
 
 })
