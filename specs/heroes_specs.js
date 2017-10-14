@@ -44,9 +44,19 @@ describe('Hero', function(){
     assert.strictEqual(330, hero1.health)
   })
 
-  it("sort to do list for difficulty")
+  it("sort to do list for difficulty", function() {
     hero1.addTask(task1)
     hero1.addTask(task2)
     hero1.addTask(task3)
-    assert.strictEqual([task2, task3, task1], hero1.toDoList)
+    hero1.sortToDoList("difficulty", "HiToLo")
+    assert.deepStrictEqual([task2, task3, task1], hero1.toDoList)
+  })
+
+  it("sort to do list for difficulty", function() {
+    hero1.addTask(task1)
+    hero1.addTask(task2)
+    hero1.addTask(task3)
+    hero1.sortToDoList("urgency", "LoToHi")
+    assert.deepStrictEqual([task3, task2, task1], hero1.toDoList)
+  })
 })
