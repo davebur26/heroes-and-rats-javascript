@@ -59,4 +59,13 @@ describe('Hero', function(){
     hero1.sortToDoList("urgency", "LoToHi")
     assert.deepStrictEqual([task3, task2, task1], hero1.toDoList)
   })
+
+  it("should show list of completed tasks", function () {
+    hero1.addTask(task1)
+    hero1.addTask(task2)
+    hero1.addTask(task3)
+    task2.completed()
+    assert.strictEqual([task2], hero1.completedTasks())
+
+  })
 })
