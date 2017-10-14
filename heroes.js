@@ -27,9 +27,19 @@ Hero.prototype.addTask = function (task) {
 };
 
 Hero.prototype.sortToDoList = function (taskElement, order) {
+  var orderMultiplyer = 1
   this.toDoList.sort(function(a,b){
-    return b[taskElement] - a[taskElement]
+    if (order === "LoToHi") orderMultiplyer = -1;
+    return (b[taskElement] - a[taskElement]) * orderMultiplyer
   })
+}
 
-};
+Hero.prototype.completedTasks = function () {
+  completedTasks = this.toDoList.filter(function(task){
+    return task.completion === true
+  })
+  return completedTasks
+}
+
+
 module.exports = Hero;
