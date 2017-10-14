@@ -34,11 +34,12 @@ Hero.prototype.sortToDoList = function (taskElement, order) {
   })
 }
 
-Hero.prototype.completedTasks = function () {
-  completedTasks = this.toDoList.filter(function(task){
-    return task.completion === true
+Hero.prototype.tasksCompleted = function (status) {
+  filteredTasks = []
+  filteredTasks = this.toDoList.filter(function(task){
+    return task.completion === status
   })
-  return completedTasks
+  return filteredTasks
 }
 
 
