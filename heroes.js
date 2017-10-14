@@ -18,8 +18,9 @@ Hero.prototype.talk = function () {
 
 Hero.prototype.eat = function (food) {
   var multiplyer = 1
-  if (food.name === this.favFood) multiplyer = 1.5;
-  this.health += food.calories * multiplyer
+  if (food.name === this.favFood) multiplyer *= 1.5;
+  if (food.poisoned === true) multiplyer *= - 2
+  this.health += (food.calories * multiplyer)
 }
 
 Hero.prototype.addTask = function (task) {
