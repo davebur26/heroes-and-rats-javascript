@@ -2,6 +2,7 @@ var assert = require('assert')
 var Hero = require('../heroes.js')
 var Food = require('../food.js')
 var Task = require('../tasks.js')
+var Rat = require('../rats.js')
 
 
 describe('Hero', function(){
@@ -76,7 +77,7 @@ describe('Hero', function(){
     rat.touch(chocolate)
     hero1.eat(chocolate)
     hero1.eat(cabbage)
-    asser.strictEqual(250, hero1.health)
+    assert.strictEqual(200, hero1.health)
   })
 
 })
