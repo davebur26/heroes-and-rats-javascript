@@ -65,14 +65,8 @@ describe('Hero', function(){
     hero1.addTask(task2)
     hero1.addTask(task3)
     task2.completed()
-    assert.deepStrictEqual([task2], hero1.completedTasks())
-  })
+    assert.deepStrictEqual([task2], hero1.tasksCompleted(true))
+    assert.deepStrictEqual([task1, task3], hero1.tasksCompleted(false))
+    })
 
-  it("should show list of uncompleted tasks", function () {
-    hero1.addTask(task1)
-    hero1.addTask(task2)
-    hero1.addTask(task3)
-    task2.completed()
-    assert.deepStrictEqual([task2], hero1.uncompletedTasks())
-  })
 })
